@@ -1,6 +1,6 @@
-# Google Data Analytics — Resource Library (Courses 1 & 2 official links)
+# Google Data Analytics — Resource Library (Courses 1–3 official links)
 
-**Platform:** Coursera (Google Data Analytics) | **Compiled:** Aug 2026 | **Source:** "Resources and citations" readings from Course 1 Module 4 and Course 2 Module 4
+**Platform:** Coursera (Google Data Analytics) | **Compiled:** Aug 2026 | **Source:** "Resources and citations" readings from Course 1 Module 4, Course 2 Module 4, and Course 3 Module 5
 
 ## 🎯 What this file is
 
@@ -29,6 +29,25 @@ useful for. (Full APA citations are in the original PDFs; this keeps only the us
 - **How to correct a #VALUE! error** (Microsoft) — the Excel equivalent
 - **COUNTIF docs:** [Sheets](https://support.google.com/docs/answer/3093480?hl=en) | [Excel](https://support.microsoft.com/en-us/office/countif-function-e0de10c6-f885-4e71-abb4-1f464816df34)
 - **Differences between Sheets and Excel** — https://support.google.com/a/users/answer/9331278?hl=en
+
+### When I need a public dataset to practice on (Course 3)
+- **Google Dataset Search** — https://datasetsearch.research.google.com — the Google of datasets
+- **Google Cloud Public Datasets** + **BigQuery public data** — practice SQL on real data at scale
+- **Kaggle datasets** — https://www.kaggle.com — plus the [Kaggle Progression System](https://www.kaggle.com/progression) for building an online presence
+- **Data.gov / US Census Bureau** — open government data (payroll-adjacent: CPS Labor Force Statistics!)
+- **Global Health Observatory (WHO)**, **NOAA Public Datasets**, **UNICEF State of the World's Children**, **Stanford Open Policing Project** — themed practice sets
+
+### When I want data to flow in automatically (Course 3)
+- **Google Sheets dynamic imports:** [IMPORTRANGE](https://support.google.com/docs/answer/3093340) (sheet→sheet), [IMPORTHTML](https://support.google.com/docs/answer/3093339) (tables from web pages), [IMPORTDATA](https://support.google.com/docs/answer/3093335) (CSV from a URL)
+- These are the spreadsheet version of what pandas' read_sql/read_csv does in my flask app
+
+### When I'm ready to network (Course 3, Module 5)
+- **Data Elixir newsletter** — https://dataelixir.com
+- **Meetup: data analytics** — https://www.meetup.com/topics/data-analytics/ — NYC is loaded with these
+- **Women in Analytics** — https://www.womeninanalytics.com/about
+- **KDnuggets lists:** [events](https://www.kdnuggets.com/meetings/index.html) | [societies & groups](https://www.kdnuggets.com/websites/societies.html)
+- **Tableau Community** — https://community.tableau.com/s/ + the "How we do data" webinar series
+- **Data Science Association** / **Digital Analytics Association** — free-membership professional orgs
 
 ### When I need the big-picture story (interviews!)
 - **The Data Life Cycle** (Strategic Finance magazine — an *accounting* publication!) — https://sfmagazine.com/post-entry/july-2018-the-data-life-cycle/
