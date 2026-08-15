@@ -53,6 +53,13 @@ vocabulary, same discipline.
 - Want **higher confidence**, **smaller margin of error**, or **more significance**? → **larger sample**
 - Bigger samples cost more — stakes decide: drug safety needs a big sample; "do residents like the new library?" doesn't. (Payroll version: a wage-theft investigation samples deep; a survey about the new timesheet UI doesn't.)
 
+### Margin of error in action: the overlap test (exam favorite!)
+- A/B test: email subject line A gets a **5%** open rate, subject line B gets **3%**. Is A better?
+- With a **±2% margin of error**, A's confidence interval is **3%-7%** — the low end touches B's 3%. **The intervals overlap, so you can't call the difference statistically significant.**
+- Rule: when two results' confidence intervals overlap, don't declare a winner. (Payroll version: dept A's error rate "looks" higher than dept B's, but if the sample-based ranges overlap, you don't report a finding — same discipline as not flagging an audit exception on noise.)
+- To **calculate** margin of error you need: population size, sample size, and confidence level (calculators: Good Calculators, CheckMarket). Note the flip: a *sample size* calculator takes margin of error as input; a *margin of error* calculator takes sample size as input.
+- Confidence level by stakes: 90% or 95% is typical; **99%** is reasonable in high-stakes industries like pharmaceuticals.
+
 ### Using a sample size calculator
 - **Inputs you decide first:** population size, confidence level, acceptable margin of error → the tool (SurveyMonkey or Raosoft calculators) returns the sample size
 - The result is the **minimum** sample needed for that confidence level and margin of error — not a target to shave down
@@ -104,6 +111,12 @@ to every dataset.
 
 **Q:** Define margin of error and confidence interval.
 **A:** Margin of error = how much the sample result may differ from the true population result. Confidence interval = sample result ± margin of error (the range the truth likely falls in).
+
+**Q:** In an A/B test, version A scores 5% and version B scores 3%, with a 2% margin of error. Is A the winner?
+**A:** No — A's confidence interval (3%-7%) overlaps B's result, so the difference isn't statistically significant.
+
+**Q:** What three inputs does a margin of error calculator need?
+**A:** Population size, sample size, and confidence level.
 
 **Q:** You need 100 survey responses and expect a 10% response rate. How many surveys do you send?
 **A:** 1,000 — divide the needed sample size by the estimated response rate. (The calculator's output is also a minimum, not a ceiling.)
