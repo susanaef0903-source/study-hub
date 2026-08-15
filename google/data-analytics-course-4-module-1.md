@@ -33,6 +33,7 @@ vocabulary, same discipline.
 | **Margin of error** | How far the sample's result may differ from the true population result | The auditor's tolerance: sample testing found no errors, so the population error rate is likely within ± some small range. |
 | **Confidence level** | How often you'd get similar results if you re-ran the survey (95% is standard) | How much you trust a spot-check: "if we pulled 30 different files 100 times, we'd reach the same conclusion 95 times." |
 | **Confidence interval** | Sample result ± margin of error = range where the true answer likely sits | "Average OT is 4.2 hrs/week, give or take 0.5" — you report the range, not false precision. |
+| **Estimated response rate** | The % of people who'll actually complete your survey, out of everyone who receives it | Like open-enrollment participation: you know only a fraction of employees return their forms by the deadline, so you plan the outreach volume around that rate. |
 | **Statistical significance** | Whether a result is real or just random chance | Is this quarter's overtime spike a real trend, or just two people covering a vacation? You've made that judgment call — stats formalizes it. |
 
 ### The three ways integrity gets compromised (exam favorite!)
@@ -51,6 +52,11 @@ vocabulary, same discipline.
 - **95% confidence level** is the standard; 90% works in some cases
 - Want **higher confidence**, **smaller margin of error**, or **more significance**? → **larger sample**
 - Bigger samples cost more — stakes decide: drug safety needs a big sample; "do residents like the new library?" doesn't. (Payroll version: a wage-theft investigation samples deep; a survey about the new timesheet UI doesn't.)
+
+### Using a sample size calculator
+- **Inputs you decide first:** population size, confidence level, acceptable margin of error → the tool (SurveyMonkey or Raosoft calculators) returns the sample size
+- The result is the **minimum** sample needed for that confidence level and margin of error — not a target to shave down
+- **For surveys, factor in the estimated response rate:** need 100 responses at a 10% response rate? Send the survey to **1,000** people (needed ÷ response rate). Same math as knowing you must chase 5x the forms you actually need back by deadline.
 
 ### Proxy data in the wild (from "When data isn't readily available")
 - **New car launched days ago, sales projections wanted now** → proxy: clicks on the car's spec page on the dealership site
@@ -98,6 +104,9 @@ to every dataset.
 
 **Q:** Define margin of error and confidence interval.
 **A:** Margin of error = how much the sample result may differ from the true population result. Confidence interval = sample result ± margin of error (the range the truth likely falls in).
+
+**Q:** You need 100 survey responses and expect a 10% response rate. How many surveys do you send?
+**A:** 1,000 — divide the needed sample size by the estimated response rate. (The calculator's output is also a minimum, not a ceiling.)
 
 **Q:** Does Null mean zero?
 **A:** Not necessarily — Null most often means the field was unassigned (left empty), though some datasets use it as 0. Confirm how Null is used before analyzing.
