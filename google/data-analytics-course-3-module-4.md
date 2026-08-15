@@ -18,6 +18,7 @@ protect data without losing access to it.
 | **Folder hierarchy** | Broad folders on top, specific subfolders inside | The file room: Year → Quarter → Pay period. Broad to specific, same as your paper system was. |
 | **Archiving** | Moving completed/older files to a separate folder or storage | The banker's boxes: closed years go to storage, current year stays at your desk. |
 | **Data security** | Protecting data from unauthorized access or corruption | The locked file room plus the "who can see salaries" access list, in digital form. |
+| **Access control** | Password protection, user permissions, and encryption protecting a spreadsheet | Exactly who could open the payroll register and who could only see their own department — now enforced by the file itself. |
 | **Encryption** | Scrambling data with an algorithm; a "key" reverses it | The locked bank bag: unreadable in transit, but your key opens it back to the original. |
 | **Tokenization** | Replacing sensitive values with random tokens; real data stored/mapped elsewhere | Employee numbers on public reports instead of SSNs — the SSN-to-ID crosswalk lives in a separate, locked system. |
 | **Version control** | Tracking who changed a file, what, when, and why | The audit trail on a payroll adjustment — every change initialed and dated, nothing overwritten silently. |
@@ -75,6 +76,9 @@ overwritten.
 
 **Q:** Where should completed files live relative to in-progress files?
 **A:** Separately — and older files should be archived in a separate folder or external storage.
+
+**Q:** Name three access control features that protect a spreadsheet.
+**A:** Password protection, user permissions, and encryption.
 
 ## 💡 How I'll actually use this
 
