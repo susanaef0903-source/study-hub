@@ -27,6 +27,8 @@ vocabulary, same discipline.
 | **Accuracy / Completeness / Consistency** | Data matches reality / nothing's missing / it's the same at every point of entry | The three questions of every reconciliation: Are the numbers right? Is every employee in the file? Does HR's record match payroll's record? |
 | **Well-aligned objective** | The data you have can actually answer the business question being asked | Being asked "what's our overtime cost trend?" and having only current-quarter data. You'd flag that mismatch before reporting — that's alignment judgment. |
 | **Proxy data** | Substitute data used when the real data doesn't exist yet | Budgeting next year's benefits cost using this year's rates plus a trend factor — a stand-in until the real renewal numbers arrive. |
+| **Open (public) datasets** | Free datasets anyone can use (Kaggle, government portals) — a common source of proxy data | Like pulling BLS wage tables or IRS mileage rates when you need outside benchmarks — published reference data you didn't collect yourself. |
+| **Null** | A field that was left unassigned/empty — NOT necessarily zero | An employee with a blank 401(k) deduction is not the same as one contributing $0 — blank might mean "never enrolled" or "data missing." You'd never book blank as zero without checking. |
 | **Population vs. sample** | The whole group you care about vs. the subset you actually measure | A full payroll audit checks every check (population); a DOL or 401(k) audit tests a pulled sample of employees and trusts it represents the rest. |
 | **Margin of error** | How far the sample's result may differ from the true population result | The auditor's tolerance: sample testing found no errors, so the population error rate is likely within ± some small range. |
 | **Confidence level** | How often you'd get similar results if you re-ran the survey (95% is standard) | How much you trust a spot-check: "if we pulled 30 different files 100 times, we'd reach the same conclusion 95 times." |
@@ -49,6 +51,12 @@ vocabulary, same discipline.
 - **95% confidence level** is the standard; 90% works in some cases
 - Want **higher confidence**, **smaller margin of error**, or **more significance**? → **larger sample**
 - Bigger samples cost more — stakes decide: drug safety needs a big sample; "do residents like the new library?" doesn't. (Payroll version: a wage-theft investigation samples deep; a survey about the new timesheet UI doesn't.)
+
+### Proxy data in the wild (from "When data isn't readily available")
+- **New car launched days ago, sales projections wanted now** → proxy: clicks on the car's spec page on the dealership site
+- **Brand-new plant-based meat product, need 4-year demand estimate** → proxy: sales history of a tofu turkey substitute that's been on the market for years
+- **Tourism campaign results not public yet** → proxy: airline bookings 1-3 months after a similar earlier campaign
+- Open/public datasets (Kaggle: CSV, JSON, SQLite, BigQuery formats) make great proxy sources — but check they truly fit the purpose, and always screen for **duplicates and Nulls** first. Null usually means unassigned (empty), but some datasets use it to mean 0 — find out which before analyzing.
 
 ### Date formats: the classic integrity trap
 12/10/20 is **October 12** in DD/MM/YY countries and **December 10** in the US (MM/DD/YY).
@@ -91,6 +99,12 @@ to every dataset.
 **Q:** Define margin of error and confidence interval.
 **A:** Margin of error = how much the sample result may differ from the true population result. Confidence interval = sample result ± margin of error (the range the truth likely falls in).
 
+**Q:** Does Null mean zero?
+**A:** Not necessarily — Null most often means the field was unassigned (left empty), though some datasets use it as 0. Confirm how Null is used before analyzing.
+
+**Q:** Give an example of using an open dataset as proxy data.
+**A:** A clinic estimating contraindications for a new nasal vaccine uses an open dataset from the injection version's trial, selecting the subset of patient profiles that best matches its own patients.
+
 **Q:** Data only partially aligns with the business objective. What are your options?
 **A:** Modify the objective, or add data constraints so the subset of data that remains aligns with the objective (e.g., limit to students with consistent weekly sessions).
 
@@ -99,4 +113,5 @@ to every dataset.
 - **nyc-payroll-explorer:** run integrity checks on the NYC payroll dataset before charting — date format consistency, negative pay rates, duplicate employee rows, cross-field check (base + OT pay behaving sensibly). Write the checks as documented steps, like an audit workpaper.
 - **flask-analytics-app:** add simple data constraints on input (type, range, mandatory) so bad rows are rejected at entry instead of cleaned later — cheaper to prevent than to fix, same as payroll edits.
 - **Spreadsheet skills from this module:** VLOOKUP and DATEDIF for the activation-to-first-use pattern — the same lookup-and-date-math I did constantly for service-date and eligibility calculations. DAYS360 even exists specifically for 360-day accounting years.
+- **Kaggle practice:** browse kaggle.com/datasets for a CSV to load into flask-analytics-app as a second data source — screening it for duplicates and Nulls first is exactly the pre-analysis check this module teaches (and the nyc-payroll-explorer dataset has plenty of Nulls to interrogate: blank OT hours vs. zero OT hours are different stories).
 - **Interview line:** "I've enforced data integrity for 20 years — certified payroll reports, DOL audits, benefit reconciliations. Replication, transfer, and manipulation risks are just new names for version control on the payroll register, conversion file errors, and unauthorized journal edits."
