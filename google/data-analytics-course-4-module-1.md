@@ -1,8 +1,8 @@
 # Google Data Analytics — Course 4, Module 1: Data Integrity & The Importance of Integrity
 
-**Platform:** Coursera (Google Data Analytics) | **Studied:** Aug 2026 | **Source:** module 1 readings
+**Platform:** Coursera (Google Data Analytics) | **Studied:** Aug 2026 | **Source:** module 1 readings + module 1 glossary
 
-> *(guide grows as more module 1 readings are added)*
+> *(guide grows as more module 1 readings are added — glossary terms folded in Aug 16)*
 
 ## 🎯 What this module is about (one sentence)
 
@@ -71,6 +71,17 @@ vocabulary, same discipline.
 - **Tourism campaign results not public yet** → proxy: airline bookings 1-3 months after a similar earlier campaign
 - Open/public datasets (Kaggle: CSV, JSON, SQLite, BigQuery formats) make great proxy sources — but check they truly fit the purpose, and always screen for **duplicates and Nulls** first. Null usually means unassigned (empty), but some datasets use it to mean 0 — find out which before analyzing.
 
+### Glossary terms not covered above (from the module 1 glossary)
+
+| Term | Plain-English meaning | Sue's payroll translation |
+|---|---|---|
+| **Data range** (constraint) | Numerical values must fall between a predefined minimum and maximum | Hours worked per week must be 0–80; a 400-hour week is a keying error, not a hero. |
+| **Mandatory** (constraint) | A value that cannot be left blank or empty | No SSN, no paycheck. Hire date, pay rate, and tax status are required fields — the system won't save the record without them. |
+| **Regular expression (RegEx)** (constraint) | A rule that values in a table must match a prescribed pattern | SSN must look like ###-##-####; a routing number must be exactly 9 digits. Pattern-matching edits you've configured in payroll setup. |
+| **Random sampling** | Selecting a sample so every possible sample has an equal chance of being chosen | The 401(k) auditor pulls employee files by random number, not "the first 25 in the drawer" — otherwise the test is biased and the auditor's opinion isn't worth much. |
+| **Hypothesis testing** | A process to determine if a survey or experiment has meaningful results (or just noise) | "Did the new timekeeping system actually reduce OT, or is this quarter's dip normal variation?" You'd compare against prior years before claiming a win — that's the hypothesis-test instinct. |
+| **DATEDIF** | Spreadsheet function that calculates days, months, or years between two dates | Service-date math: years of service for vesting, days between hire and benefits eligibility, months since last raise. |
+
 ### Date formats: the classic integrity trap
 12/10/20 is **October 12** in DD/MM/YY countries and **December 10** in the US (MM/DD/YY).
 A global dataset with mixed formats = quietly broken analysis. Always confirm the format
@@ -129,6 +140,12 @@ to every dataset.
 
 **Q:** Data only partially aligns with the business objective. What are your options?
 **A:** Modify the objective, or add data constraints so the subset of data that remains aligns with the objective (e.g., limit to students with consistent weekly sessions).
+
+**Q:** What is random sampling, and why does it matter?
+**A:** Selecting a sample so every possible sample has an equal chance of being chosen — it keeps the sample representative and the results unbiased.
+
+**Q:** What is hypothesis testing?
+**A:** A process to determine whether a survey or experiment has meaningful results, rather than results that could be explained by chance.
 
 ## 💡 How I'll actually use this
 
