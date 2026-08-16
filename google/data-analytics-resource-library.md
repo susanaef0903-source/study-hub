@@ -1,6 +1,6 @@
-# Google Data Analytics — Resource Library (Courses 1–3 official links)
+# Google Data Analytics — Resource Library (Courses 1–4 official links)
 
-**Platform:** Coursera (Google Data Analytics) | **Compiled:** Aug 2026 | **Source:** "Resources and citations" readings from Course 1 Module 4, Course 2 Module 4, and Course 3 Module 5
+**Platform:** Coursera (Google Data Analytics) | **Compiled:** Aug 2026 | **Source:** "Resources and citations" readings from Course 1 Module 4, Course 2 Module 4, Course 3 Module 5, and Course 4 Module 6
 
 ## 🎯 What this file is
 
@@ -63,8 +63,60 @@ useful for. (Full APA citations are in the original PDFs; this keeps only the us
 - **Kaggle** — https://www.kaggle.com/
 - **World Happiness Report**, **Census Population & Housing State Data** — used in the Course 2 visualization lessons
 
+## 📚 Course 4 — Process Data from Dirty to Clean
+
+*(from the Course 4 Module 6 "resources and citations" reading; sorted by what it's useful for)*
+
+### When I need to size a sample or state a margin of error (Module 1)
+- **Sample size calculators:** [SurveyMonkey](https://www.surveymonkey.com/mp/sample-size-calculator/) | [Raosoft](http://www.raosoft.com/samplesize.html) — inputs: population, confidence level, margin of error → minimum sample
+- **Margin of error calculators:** [Good Calculators](https://goodcalculators.com/margin-of-error-calculator/) | [CheckMarket](https://www.checkmarket.com/sample-size-calculator/#sample-size-margin-of-error-calculator) — inputs: population, sample size, confidence level
+- **Central Limit Theorem** (Investopedia) — https://www.investopedia.com/terms/c/central_limit_theorem.asp — why 30 is the floor
+- **Sample size formula** (Statistics Solutions) — https://www.statisticssolutions.com/dissertation-resources/sample-size-calculation-and-sample-size-justification/sample-size-formula/
+- **Power analysis, statistical significance & effect size** (MEERA, U. Michigan) — https://meera.snre.umich.edu/power-analysis-statistical-significance-effect-size
+
+### When I need date math or lookups in a spreadsheet (Module 1)
+- **VLOOKUP:** [Sheets](https://support.google.com/docs/answer/3093318?hl=en) | [Excel](https://support.microsoft.com/en-us/office/vlookup-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1)
+- **DATEDIF:** [Sheets](https://support.google.com/docs/answer/6055612?hl=en) | [Excel](https://support.microsoft.com/en-us/office/datedif-function-25dba1a4-2812-480b-84dd-8b32a451b35c) — service-date / eligibility math
+- **DAYS360** (Excel) — https://support.microsoft.com/en-us/office/days360-function-b9a509fd-49ef-407e-94df-0cbda5718c2a — the 360-day accounting year, on purpose
+
+### When I need proxy data or a practice dataset (Module 1)
+- **Kaggle datasets** — https://www.kaggle.com/datasets — CSV, JSON, SQLite, BigQuery formats; screen for duplicates and Nulls first
+- Course-mentioned Kaggle sets: credit card customers, trending YouTube videos, U.S. wildfire data, Google Analytics 360 sample
+
+### When I need to explain why dirty data matters (Module 2 — interview ammo)
+- **Dirty data: what is it costing you?** (DemandGen) — https://www.demandgen.com/dirty-data-what-is-it-costing-you/
+- **Research finds obsolete or dirty data is widespread** (DQ Global) — https://www.dqglobal.com/blog/obsolete-or-dirty-data/
+- **Hospitals battle duplicate medical records** (SearchHealthIT) — https://searchhealthit.techtarget.com/feature/Hospitals-battle-duplicate-medical-records-with-technology
+- **Seizing opportunity in data quality** (MIT Sloan Management Review, T. Redman) — https://sloanreview.mit.edu/article/seizing-opportunity-in-data-quality/
+
+### When I'm cleaning in a spreadsheet (Module 2)
+- **10 Google Workspace tips to clean up data** — https://support.google.com/a/users/answer/9604139?hl=en
+- **Top ten ways to clean your data** (Excel) — https://support.microsoft.com/en-us/office/top-ten-ways-to-clean-your-data-2844b620-677c-47a7-ac3e-c2e157d1db19
+- **Change the case of text in Excel** — https://support.microsoft.com/en-us/topic/change-the-case-of-text-in-excel-adc65f5b-958f-46a2-4d23-ab4d5faf48a8
+
+### When I want to automate the cleaning (Module 2 — flask-analytics-app!)
+- **Automating scientific data analysis with Python, part 1** (Towards Data Science, P. Grant) — https://towardsdatascience.com/automating-scientific-data-analysis-part-1-c9979cd0817e
+- **Automating big-data analysis** (MIT News) — https://news.mit.edu/2016/automating-big-data-analysis-1021
+- **10 of the best options for workflow automation software** (TechnologyAdvice) — https://technologyadvice.com/blog/information-technology/top-10-workflow-automation-software/
+
+### When I'm picking or setting up a SQL environment (Module 3)
+- **What is a SQL dialect, and which one should you learn?** (LearnSQL) — https://learnsql.com/blog/what-sql-dialect-to-learn/
+- **SQL Server, PostgreSQL, MySQL... what's the difference?** (DataCamp) — https://www.datacamp.com/community/blog/sql-differences
+- **SQL vs MySQL vs SQL Server** (Software Testing Help) — https://www.softwaretestinghelp.com/sql-vs-mysql-vs-sql-server/
+- **What is SQL** (SQL Tutorial) — https://www.sqltutorial.org/what-is-sql/
+- **SQLite window functions** — https://sqlite.org/windowfunctions.html — my flask app runs on SQLite, so this one is directly usable
+- **BigQuery sandbox** — https://cloud.google.com/bigquery/docs/quickstarts/quickstart-cloud-console#about-bigquery-sandbox — free tier, no credit card
+- **Automobile data set** (UCI ML Repository) — https://archive.ics.uci.edu/ml/datasets/Automobile — the "clean data using SQL" practice set
+- **Stack Overflow** — https://stackoverflow.com/ — the course's official answer for debugging SQL
+
+### When I'm verifying and documenting a clean (Module 4)
+- **Sheets functions:** [IMPORTRANGE](https://support.google.com/docs/answer/3093340?hl=en) | [QUERY](https://support.google.com/docs/answer/3093343?hl=en) | [FILTER](https://support.google.com/docs/answer/3093197?hl=en) — pull, slice, and view data without editing the source
+- **Paste links to source cells instead of values** (Professor Excel) — https://professor-excel.com/how-to-paste-cell-links/ — the Excel version of IMPORTRANGE
+- **Markdown basic writing and formatting syntax** (GitHub Docs) — https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax — for the CHANGELOG.md in every repo
+
 ## 💡 How I'll actually use this
 
 - Pull the Looker requirements worksheet before adding the next feature to **nyc-payroll-explorer** — write down what question the dashboard answers first.
 - The Strategic Finance data-life-cycle article is my bridge line: accounting publications already talk about data this way — "I'm not switching fields, I'm switching tools."
 - Weekly habit: one W3Schools SQL drill + one Viz of the Day for chart ideas for **flask-analytics-app**.
+- Course 4 add: start a `CHANGELOG.md` (Markdown syntax link above) in **nyc-payroll-explorer** and **flask-analytics-app**, and use the SQLite window-functions page the next time I need a running total or rank in the flask app.
