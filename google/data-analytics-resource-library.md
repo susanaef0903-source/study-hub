@@ -1,6 +1,6 @@
-# Google Data Analytics — Resource Library (Courses 1–4 official links)
+# Google Data Analytics — Resource Library (Courses 1–5 official links)
 
-**Platform:** Coursera (Google Data Analytics) | **Compiled:** Aug 2026 | **Source:** "Resources and citations" readings from Course 1 Module 4, Course 2 Module 4, Course 3 Module 5, and Course 4 Module 6
+**Platform:** Coursera (Google Data Analytics) | **Compiled:** Aug 2026 | **Source:** "Resources and citations" readings from Course 1 Module 4, Course 2 Module 4, Course 3 Module 5, Course 4 Module 6, and Course 5 Module 4
 
 ## 🎯 What this file is
 
@@ -114,9 +114,58 @@ useful for. (Full APA citations are in the original PDFs; this keeps only the us
 - **Paste links to source cells instead of values** (Professor Excel) — https://professor-excel.com/how-to-paste-cell-links/ — the Excel version of IMPORTRANGE
 - **Markdown basic writing and formatting syntax** (GitHub Docs) — https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax — for the CHANGELOG.md in every repo
 
+## 📚 Course 5 — Analyze Data to Answer Questions
+
+*(from the Course 5 Module 4 "resources and citations" reading; sorted by what it's useful for)*
+
+### When I'm setting up or refreshing a SQL environment (Module 1)
+- **BigQuery sandbox** — https://cloud.google.com/bigquery/docs/quickstarts/quickstart-cloud-console#about-bigquery-sandbox — free tier; **BigQuery docs** — https://cloud.google.com/bigquery/docs
+- Getting-started pages for MySQL, Microsoft SQL Server, PostgreSQL, and SQLite are all linked from the reading — SQLite is the one my flask app runs on
+
+### When I need to sort/filter in a spreadsheet (Module 1)
+- **Sheets:** [Sort & filter your data](https://support.google.com/docs/answer/3540681?co=GENIE.Platform%3DDesktop&hl=en) | [SORT function](https://support.google.com/docs/answer/3093150?hl=en) | [FILTER function](https://support.google.com/docs/answer/3093197?hl=en) | [Sort & filter video](https://www.youtube.com/watch?v=VcRBHXBMKBU)
+- **Excel:** [Sort data in a range or table](https://support.microsoft.com/en-us/office/sort-data-in-a-range-or-table-62d0b95d-2a90-4610-a6ae-2e545c4a4654) | [SORT](https://support.microsoft.com/en-us/office/sort-function-22f63bd0-ccc8-492f-953d-c20e8e44b86c) | [SORTBY](https://support.microsoft.com/en-us/office/sortby-function-cd2d7a62-1b93-435c-b561-d6a35134f28f) | [FILTER](https://support.microsoft.com/en-us/office/filter-function-f4f7cb66-82eb-4767-8f7c-4877ad80c759) | [GCFLearnFree: sorting data video](https://www.youtube.com/watch?v=Ep5q1cUhQas)
+
+### When I'm converting types or combining text (Module 2)
+- **Text → number / date:** [Excel text→number (Ablebits)](https://www.ablebits.com/office-addins-blog/2018/07/18/excel-convert-text-to-number/) | [Excel text→date (Ablebits)](https://www.ablebits.com/office-addins-blog/2015/03/26/excel-convert-text-date/) | [Sheets date format (Ablebits)](https://www.ablebits.com/office-addins-blog/google-sheets-change-date-format/) | [Sheets text→numbers (Productivity Spot)](https://productivityspot.com/convert-text-to-numbers-google-sheets/)
+- **Combine / split cells:** [Excel: combine text from two or more cells](https://support.microsoft.com/en-us/office/combine-text-from-two-or-more-cells-into-one-cell-81ba0946-ce78-42ed-b3c3-21340eb164a6) | [Sheets: split or combine text cells (TechRepublic)](https://www.techrepublic.com/article/how-to-split-or-combine-text-cells-with-google-sheets/)
+- **Percentages:** [Excel: format numbers as percentages](https://support.microsoft.com/en-us/office/format-numbers-as-percentages-de49167b-d603-4450-bcaa-31fba6c7b6b4) | [Sheets TO_PERCENT](https://support.google.com/docs/answer/3094284?hl=en)
+- **SQL CAST/type conversion:** [BigQuery conversion rules](https://cloud.google.com/bigquery/docs/reference/standard-sql/conversion_rules) | [CAST and CONVERT (T-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver15) | [MySQL cast functions](https://dev.mysql.com/doc/refman/8.0/en/cast-functions.html) | [SQL type casting (RudderStack)](https://www.rudderstack.com/guides/how-to-sql-type-casting/)
+- **SQL strings:** [W3Schools SQL keywords reference](https://www.w3schools.com/sql/sql_ref_keywords.asp) | [CONCAT()](https://www.w3schools.com/sql/func_sqlserver_concat.asp) | [CONCAT_WS()](https://www.w3schools.com/sql/func_sqlserver_concat_ws.asp) | [SQL Server functions list](https://www.w3schools.com/sql/sql_ref_sqlserver.asp)
+
+### When I want spreadsheet power-user tricks (Module 2)
+- **Sheets:** [function list](https://support.google.com/docs/table/25273) | [keyboard shortcuts](https://support.google.com/docs/answer/181110) | [Ben Collins: 18 formula tips & techniques](https://www.benlcollins.com/spreadsheets/google-sheets-formulas-techniques/) | [20 Sheets formulas you must know (Automate.io)](https://automate.io/blog/google-spreadsheet-formulas/)
+- **Excel:** [Exceljet 222 shortcuts](https://exceljet.net/keyboard-shortcuts) | [Exceljet 500 formula examples](https://exceljet.net/formulas) | [Exceljet function list](https://exceljet.net/excel-functions) | [11 advanced Excel skills (Learn to Code With Me)](https://learntocodewith.me/posts/excel-skills/)
+- **Stack Overflow:** [home](https://stackoverflow.com/) | [how do I search?](https://stackoverflow.com/help/searching) | [tags](https://stackoverflow.com/tags) — the course's official debugging answer, again
+
+### When I need JOIN / alias / subquery practice (Module 3 — interview prep!)
+- **JOINs:** [W3Schools SQL Joins](https://www.w3schools.com/sql/sql_join.asp) (quick reminder) | [Essential SQL: SQL Joins – the ultimate guide](https://www.essentialsql.com/sql-joins/) (thorough) | [SQL Join types explained in visuals (Data School)](https://dataschool.com/how-to-teach-people-sql/sql-join-types-explained-visually/) (Venn diagrams) | [SQL JOINs: bringing data together one join at a time (TDS)](https://towardsdatascience.com/sql-join-8212e3eb9fde) (has sample data to follow along) | [Dofactory SQL JOIN](https://www.dofactory.com/sql/join) (JOINs + aliasing)
+- **Aliases:** [W3Schools SQL aliases](https://www.w3schools.com/sql/sql_alias.asp) | [SQL Tutorial: SQL alias](https://www.sqltutorial.org/sql-alias/) | [SAS: using column aliases](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/sqlproc/p0aymxwsvbt5wcn1lncugwjtf758.htm)
+- **Functions & subqueries:** [Mode: writing subqueries in SQL](https://mode.com/sql-tutorial/sql-sub-queries/) (interactive, with practice problems) | [w3resource: SQL subqueries](https://www.w3resource.com/sql/subqueries/understanding-sql-subqueries.php) | [W3Schools CASE](https://www.w3schools.com/sql/sql_case.asp) | [W3Schools MySQL IF()](https://www.w3schools.com/sql/func_mysql_if.asp) | [W3Schools HAVING (mirror)](http://www-db.deis.unibo.it/courses/TW/DOCS/w3schools/sql/sql_having.asp.html)
+- **VLOOKUP:** [Excel VLOOKUP function (Microsoft)](https://support.microsoft.com/en-us/office/vlookup-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1) | [Excel Campus VLOOKUP tutorial video](https://www.youtube.com/watch?v=d3BYVQ6xIE4) | [Exceljet: 23 things you should know about VLOOKUP](https://exceljet.net/things-you-should-know-about-vlookup) | [GCFGlobal: how to use VLOOKUP](https://edu.gcfglobal.org/en/excel-tips/how-to-use-excels-vlookup-function/1/) | [VLOOKUP in Excel vs Sheets (InfoInspired)](https://infoinspired.com/sheets-vs-excel-formula/vlookup-formula-in-excel-and-google-sheets/)
+- **Pivot table (Excel):** [Create a PivotTable to analyze worksheet data](https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576)
+
+### When I need multi-condition formulas (Module 4)
+- [Excel IFS function (Exceljet)](https://exceljet.net/excel-functions/excel-ifs-function) | [VLOOKUP with multiple criteria (Exceljet)](https://exceljet.net/formula/vlookup-with-multiple-criteria) | [INDEX and MATCH with multiple criteria (Exceljet)](https://exceljet.net/formula/index-and-match-with-multiple-criteria) | [Using IF with AND, OR, NOT (Microsoft)](https://support.microsoft.com/en-us/office/using-if-with-and-or-and-not-functions-d895f58c-b36c-419e-b1f2-5c193a236d97)
+
+### When I'm building pivot tables (Module 4 — payroll register summaries)
+- **Calculate:** Excel [Calculate values in a PivotTable](https://support.microsoft.com/en-us/office/calculate-values-in-a-pivottable-11f41417-da80-435c-a5c6-b0185e59da77) | [Exceljet calculated field example](https://exceljet.net/pivot-table/pivot-table-calculated-field-example) | [Power Spreadsheets: calculated fields step-by-step](https://powerspreadsheets.com/pivottable-calculated-fields/) — Sheets [Create & use pivot tables](https://support.google.com/docs/answer/1272900) | [InfoInspired: all about calculated fields](https://infoinspired.com/google-docs/spreadsheet/all-about-calculated-field-in-pivot-table-in-google-sheets/) | [Ben Collins: pivot tables in Sheets, beginner's guide](https://www.benlcollins.com/spreadsheets/pivot-tables-google-sheets/)
+- **Sort:** Excel [Sort data in a PivotTable or PivotChart](https://support.microsoft.com/en-us/office/sort-data-in-a-pivottable-or-pivotchart-e41f7107-b92d-44ef-861f-24430830450a) | [Tutorials Point: sorting data](https://www.tutorialspoint.com/excel_pivot_tables/excel_pivot_tables_sorting_data.htm) | [Exceljet: sort a pivot table by value](https://exceljet.net/lessons/how-to-sort-a-pivot-table-by-value) — Sheets [Customize a pivot table](https://support.google.com/docs/answer/7572895) | [InfoInspired: sort pivot columns in custom order](https://infoinspired.com/google-docs/spreadsheet/pivot-table-columns-in-custom-order-in-google-sheets/) | [1-minute ascending/descending guide (Medium)](https://medium.com/actiondesk/pivot-table-ascending-descending-order-in-google-sheets-and-excel-1-minute-ultimate-beginners-8f9f4c560492)
+- **Filter:** Excel [Filter data in a PivotTable](https://support.microsoft.com/en-us/office/filter-data-in-a-pivottable-cc1ed287-3a97-4e95-b377-ddfafe79fa8f) | [For Dummies: filter Excel pivot table data](https://www.dummies.com/article/technology/software/microsoft-products/excel/how-to-filter-excel-pivot-table-data-152376) — Sheets [InfoInspired: filter multiple values](https://infoinspired.com/google-docs/spreadsheet/filter-multiple-values-in-pivot-table-sheets/)
+- **Format:** Excel [Design the layout and format of a PivotTable](https://support.microsoft.com/en-us/office/design-the-layout-and-format-of-a-pivottable-a9600265-95bf-4900-868e-641133c05a80) — Sheets [Create and edit pivot tables (group data)](https://support.google.com/a/users/answer/9308944#group_data_in_a_pivot_table)
+
+### When I'm working with temporary tables (Module 4 — flask-analytics-app scratch tables)
+- [BigQuery DDL: temporary tables](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language#temporary_tables) | [BigQuery "temp tables" via WITH (Pascal Landau)](https://www.pascallandau.com/bigquery-snippets/use-temporary-tables-with-named-subquery/) | [Intro to temporary tables in SQL Server ({coding}Sight)](https://codingsight.com/introduction-to-temporary-tables-in-sql-server/) | [SQL Server temporary tables (SQLServerTutorial.net)](https://www.sqlservertutorial.net/sql-server-basics/sql-server-temporary-tables/) | [Table variables vs temporary tables (Redgate)](https://www.red-gate.com/hub/product-learning/sql-prompt/choosing-table-variables-temporary-tables)
+
+### When I need a practice dataset for calculations (Module 4)
+- **Avocado prices** (Justin Kiggins, Kaggle, ODbL) — https://www.kaggle.com/neuromusic/avocado-prices — the module's calculation dataset; **Kaggle datasets** — https://www.kaggle.com/datasets
+- [BigQuery: introduction to loading data](https://cloud.google.com/bigquery/docs/loading-data) — how to get a CSV into BigQuery
+- **Connected Sheets** (BigQuery data inside Google Sheets) — the reading links Google's "Get started with BigQuery data in Google Sheets" and the product announcement; pivot on millions of rows without exporting
+
 ## 💡 How I'll actually use this
 
 - Pull the Looker requirements worksheet before adding the next feature to **nyc-payroll-explorer** — write down what question the dashboard answers first.
 - The Strategic Finance data-life-cycle article is my bridge line: accounting publications already talk about data this way — "I'm not switching fields, I'm switching tools."
 - Weekly habit: one W3Schools SQL drill + one Viz of the Day for chart ideas for **flask-analytics-app**.
 - Course 4 add: start a `CHANGELOG.md` (Markdown syntax link above) in **nyc-payroll-explorer** and **flask-analytics-app**, and use the SQLite window-functions page the next time I need a running total or rank in the flask app.
+- Course 5 add: work through the Mode subquery tutorial and the Data School JOIN visuals before any SQL interview — those two plus the timesheet-to-master story are my JOIN answer. Bookmark the pivot "Sort" links for the next payroll-style summary; bookmark the Pascal Landau `WITH` article for the flask app's scratch tables.
