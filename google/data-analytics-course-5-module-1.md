@@ -1,8 +1,6 @@
 # Google Data Analytics — Course 5, Module 1: Organize Data for More Effective Analysis
 
-**Platform:** Coursera (Google Data Analytics) | **Studied:** Aug 2026 | **Source:** module 1 readings
-
-> *(guide grows as more module 1 readings are added)*
+**Platform:** Coursera (Google Data Analytics) | **Studied:** Aug 2026 | **Source:** module 1 readings + module 1 glossary (sort/filter in Sheets & Excel, sort with SQL, and SORT function folded in Aug 17)
 
 ## 🎯 What this module is about (one sentence)
 
@@ -39,7 +37,13 @@ now you get to look at the view.
 | **Sort sheet vs. sort range** (spreadsheets) | *Sort sheet* keeps every row intact; *sort range* on one column shuffles that column alone and **scrambles the rows** | Sorting only the Employee Name column and leaving Net Pay where it was = every check now belongs to the wrong person. You've seen someone do this. Never sort a single column of a register. |
 | **Pivot table sort** | Pivot rows/columns sort ascending by default (custom lists first); setting descending creates a rule that persists as new data is added | Your department-total pivot: set it to descending once and it stays ranked correctly every pay period you refresh it. |
 | **`WHERE` clause** (SQL filter) | `WHERE Genre = 'Comedy'` keeps only rows meeting the condition | `WHERE dept = 'Payroll'` or `WHERE ot_hours > 0` — the AutoFilter dropdown, written as a sentence. |
-| **`ORDER BY`** (SQL sort) | Sorts the result set; `ORDER BY column DESC` for descending (covered in the sort videos alongside spreadsheet sorting) | "Sort by gross pay, largest first" — the same as clicking Z→A on the Gross column. |
+| **`ORDER BY`** (SQL sort — the module 1 glossary term) | A SQL clause that sorts the results returned by a query. Ascending by default; add `DESC` for descending. Column names with spaces go in backticks: `` ORDER BY `Release Date` DESC ``. Always the **last line** of the query so *all* the data gets sorted | "Sort by gross pay, largest first" — the same as clicking Z→A on the Gross column. And "last line" = you sort the finished report, not the raw pull. |
+| **`WHERE` + `AND` + `ORDER BY`** | Filter on two conditions, then sort: `WHERE Genre = "Comedy" AND Revenue > 300000000 ORDER BY ...` | "Show me OT lines **and** only for dept 210, sorted highest first" — two AutoFilter dropdowns plus a sort, as one SQL sentence. |
+| **`SORT` function** (Sheets) | `=SORT(range, column_number, TRUE/FALSE)` — sorts a range by a column **number** (A=1, B=2…), `TRUE` = ascending, `FALSE` = descending. Lives in a formula, so it re-sorts automatically as data changes | A self-updating "top earners" list next to your register: `=SORT(A2:F500, 5, FALSE)` ranks by column E (gross) with no menu clicks — every time you paste a new period, it re-ranks itself. |
+| **`FILTER` function** (Sheets) | Formula version of the filter menu — returns only rows matching your criteria; combine `FILTER` inside `SORT` to filter-then-sort automatically | A living "employees with garnishments" tab that rebuilds itself from the master data instead of you re-applying the AutoFilter each period. |
+| **Excel `SORT` / `SORTBY` / `FILTER`** | Excel's function versions of the same ideas; plus menu **Sort & Filter** custom sort, and **Options → Sort left to right** to sort *columns* by row values (default is top-to-bottom, sorting rows by column) | Sort left-to-right = reordering the *columns* of a report by a header row — e.g., arranging pay-code columns by their total, biggest first. Rare, but you've wanted it. |
+| **Multi-column custom sort** | Data → Sort range → Advanced options → check "Data has a header row" → Sort by column 1 → Add another sort column → column 2. Rows are ordered by the **first** condition, then ties broken by the second | Sort by department, then by last name within department — the standard register layout. The order you add the conditions is the order they apply. |
+| **Filter views** (Sheets) | Filters in a shared Sheet affect **everyone** viewing it; a *filter view* is personal and doesn't disturb others | Filtering the shared benefits census while HR is also in it — use a filter view so you don't hide half the file on your coworker mid-review. |
 | **BigQuery** | Google Cloud's data warehouse for querying/filtering large datasets, aggregating, and complex ops — used when data is too big for a spreadsheet | The GL when it's 5 million lines and Excel chokes. Same questions, bigger engine. |
 | **BigQuery Studio panes** | **Navigation pane** (moves between GCP tools), **Explorer pane** (your projects, starred projects, + ADD), **SQL Workspace** (write/run queries; personal & project history) | Navigation = the ERP main menu; Explorer = the folder tree of companies/ledgers; SQL Workspace = the report writer window. |
 | **Schema / Details / Preview tabs** | Column names & types / metadata like creation date / first rows | Schema = the file layout spec you got with every 401(k) vendor file; Preview = opening the file to eyeball the first 20 rows before loading. |
@@ -70,6 +74,43 @@ WHERE Genre = 'Comedy';
 - Text values go in single quotes; replace `projectID` with your own project ID
 - Run it → shorter list, only comedies. Payroll version: `WHERE pay_code = 'OT'`
 
+### Sort with SQL — the four-step build (from "Step-by-step: Sort data with SQL")
+```sql
+-- 1. sort ascending (default): oldest → newest
+SELECT * FROM `projectID.movie_data.movies` ORDER BY `Release Date`;
+-- 2. sort descending: newest → oldest
+SELECT * FROM `projectID.movie_data.movies` ORDER BY `Release Date` DESC;
+-- 3. filter, then sort
+SELECT * FROM `projectID.movie_data.movies`
+WHERE Genre = "Comedy"
+ORDER BY `Release Date` DESC;
+-- 4. filter on two conditions, then sort
+SELECT * FROM `projectID.movie_data.movies`
+WHERE Genre = "Comedy"
+AND Revenue > 300000000
+ORDER BY `Release Date` DESC;
+```
+- Backticks around `` `Release Date` `` because the column name has a space
+- `ORDER BY` goes on the **last line** so the whole result set gets sorted after filtering
+- Payroll version of #4: `WHERE agency = 'DOE' AND ot_paid > 10000 ORDER BY ot_paid DESC`
+
+### SORT function in Sheets — the party-plan example (from "Use the SORT function")
+- `=SORT(A2:D6, 2, TRUE)` → sorts guests A2:D6 by column **2** (Table), ascending
+- Column is a **number, not a letter** (A=1, B=2, C=3…); `TRUE` = ascending, `FALSE` = descending
+- Function output lives in a cell and updates itself — versus the menu sort, which is a one-time rearrangement
+- Custom multi-condition sort via menu: Data → Sort range → Advanced range sorting options → check **Data has a header row** → Sort by *Sent Invitation* A→Z → Add another sort column → *Guest Names* A→Z → SORT. Result: all the "No" guests alphabetically, then all the "Yes" guests alphabetically.
+
+### Sheets vs. Excel cheat sheet (from "Sort and filter in Sheets and Excel")
+| Task | Google Sheets | Excel |
+|---|---|---|
+| Menu sort | Data → Sort sheet / Sort range | Sort & Filter button (Smallest to Largest / Largest to Smallest for numbers) |
+| Menu filter | Select all → Data → Create a filter (use **filter views** for personal filtering in shared files) | Sort & Filter → Filter |
+| Custom/advanced sort | `SORT` function | Custom sort from the menu; `SORT`, `SORTBY` functions |
+| Custom filter | `FILTER` function (nest inside `SORT` to filter-then-sort automatically) | `FILTER` function |
+| Sort columns instead of rows | — | Options → **Sort left to right** (default is top to bottom) |
+- **Best practices:** back up / copy the data before major changes; remember other people may be in the same shared sheet when you filter.
+- The reading's example: sort gross revenue by region descending to see top performers, ascending to see the weakest — same move as ranking departments by OT cost.
+
 ### Upload a .csv to BigQuery — the recipe (from "Upload the movie dataset")
 1. Explorer → three dots next to project → **Create dataset** → ID `movie_data`, Location type **Multi-region → US**, Google-managed encryption → CREATE DATASET
 2. Click the dataset → **+ CREATE TABLE**
@@ -91,7 +132,9 @@ filtering. Sorting puts rows in a meaningful order — alphabetical, by date, bi
 so you can rank things or see them grouped. Filtering hides everything except the rows that
 match what you're looking for, and when you clear it the data snaps back to normal, so it's
 great for hunting errors and outliers. You can do both in a spreadsheet (Data → Sort sheet, or
-the filter dropdowns) or in SQL, where `WHERE` is the filter and `ORDER BY` is the sort. The
+the filter dropdowns — or the `SORT` and `FILTER` functions if you want it to update itself) or
+in SQL, where `WHERE` is the filter and `ORDER BY` is the sort (ascending by default, `DESC` to
+flip it, and it always goes on the last line so everything gets sorted). The
 big spreadsheet trap: sorting one column by itself scrambles the rows, because each row is one
 record — always sort the whole sheet. When the data is too big for a spreadsheet you use
 BigQuery: create a dataset, upload a .csv as a table, and query it in the SQL Workspace. And
@@ -142,10 +185,38 @@ separated, rows and columns, works everywhere.
 **Q:** What is the fully qualified table name format in BigQuery?
 **A:** `` `projectID.dataset.table` `` in backticks — e.g., `` `projectID.movie_data.movies` ``.
 
+**Q:** What does the SQL `ORDER BY` clause do, and what's its default direction?
+**A:** It sorts the results returned by a query. Ascending by default; add `DESC` for descending (e.g., `` ORDER BY `Release Date` DESC ``).
+
+**Q:** Why are there backticks around `Release Date` in `` ORDER BY `Release Date` ``?
+**A:** The column name contains a space; backticks capture the whole name as one identifier.
+
+**Q:** Where does `ORDER BY` go in a query that also has `WHERE`, and why?
+**A:** On the last line, after `WHERE` (and any `AND` conditions) — so all the filtered data gets sorted.
+
+**Q:** Write a query that returns only comedies with revenue over $300M, newest first.
+**A:** `SELECT * FROM \`projectID.movie_data.movies\` WHERE Genre = "Comedy" AND Revenue > 300000000 ORDER BY \`Release Date\` DESC;`
+
+**Q:** What does `=SORT(A2:D6, 2, TRUE)` do?
+**A:** Sorts the range A2:D6 by its 2nd column (column B), ascending. `FALSE` would sort descending. The column is given as a number, not a letter.
+
+**Q:** In a multi-column custom sort, which condition wins?
+**A:** Data is sorted by the conditions in the order they're applied — the first sort column orders the rows, the second breaks ties within it (e.g., Sent Invitation A→Z, then Guest Names A→Z).
+
+**Q:** Menu sort/filter vs. the SORT/FILTER functions — when do you need the functions?
+**A:** Menus and buttons cover basic sorting and filtering; you need the SORT and FILTER functions for custom rules and to have results sort/filter automatically without menu clicks. Excel also has SORTBY.
+
+**Q:** You're filtering a Google Sheet that other people are viewing. What should you use?
+**A:** A filter view — regular filters in Sheets can affect all viewers; filter views are personal. (Also: back up the data before major changes.)
+
+**Q:** How do you sort by rows instead of columns in Excel?
+**A:** Sort & Filter → Options → Sort left to right (the default is Sort top to bottom, which sorts rows by a column).
+
 ## 💡 How I'll actually use this
 
 - **flask-analytics-app — the `/query` page:** it already runs SQL with `WHERE` and `ORDER BY`. This module is the textbook version of exactly that page: `WHERE` = filter, `ORDER BY` = sort. Next step: add a couple of saved example queries to the page (e.g., filter to one category then sort descending) so a visitor sees sort + filter *combined*, which the reading calls out as the real skill.
 - **nyc-payroll-explorer:** the NYC payroll CSV is the .csv workflow from this module at scale — download, check size limits, upload. Load a slice into BigQuery (dataset `nyc_payroll`, table `citywide`, Auto detect schema, and remember the **V2 character map** if headers have parentheses), then run `WHERE agency_name = '...' ORDER BY regular_gross_paid DESC` to find outliers — the same overtime-audit filter I've run in Excel for years, now in SQL.
 - **The one-column-sort trap is a portfolio talking point:** I can explain *why* sorting a single column corrupts a dataset in payroll terms (checks land on the wrong names) — that's data integrity from Course 4 meeting sorting from Course 5. Worth a sentence in the nyc-payroll-explorer README under "data handling."
 - **Job hunt:** every analyst posting says "filter and sort large datasets in Excel and SQL." Interview line: *"Sorting and filtering are how I've reviewed payroll registers and GL exports for 20 years — sort by gross to catch outliers, filter to a cost center to reconcile it. In Course 5 I moved the same workflow into SQL with WHERE and ORDER BY on BigQuery, and I use it in my Flask query app."*
+- **nyc-payroll-explorer, "top earners" tab:** build the ranked view with `=SORT(FILTER(...), col, FALSE)` in Sheets (or `WHERE ... AND ... ORDER BY total_pay DESC` in BigQuery) so it re-ranks itself when the dataset refreshes — the "self-updating register" I always wished Excel AutoFilter was.
 - **BigQuery hygiene:** stay on the sandbox for now (no card, enough for this course); star `bigquery-public-data` in Explorer so public datasets are searchable; keep the movie_data upload recipe above as my checklist for any future CSV upload.
